@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Innovate Hacks 3.0 is a student hackathon with workshops, prizes, and mentors. Join us to build, learn, and ship ideas in a day.">
     <title>Innovate Hacks 3.0</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/images/favicon.svg">
     <style>
         :root {
             color-scheme: dark;
@@ -244,62 +246,6 @@
             font-size: 12px;
             letter-spacing: 1px;
             text-transform: uppercase;
-        }
-
-        .gradient-lines {
-            position: relative;
-            width: 100%;
-            max-width: 36rem;
-            height: 10rem;
-            margin: 24px auto 0;
-        }
-
-        .gradient-line {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
-        .gradient-line-1 {
-            width: 75%;
-            top: 0;
-            filter: blur(1px);
-        }
-
-        .gradient-line-2 {
-            width: 75%;
-            top: 0;
-            animation-delay: 0.5s;
-        }
-
-        .gradient-line-3 {
-            width: 25%;
-            top: 0;
-            filter: blur(2px);
-            animation-delay: 1s;
-        }
-
-        .gradient-line-4 {
-            width: 25%;
-            top: 0;
-            animation-delay: 1.5s;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
-
-        .radial-mask {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse 350px 200px at top, transparent 20%, var(--bg));
-            pointer-events: none;
         }
 
         @keyframes fadeInUp {
@@ -614,6 +560,8 @@
             object-fit: cover;
             border-radius: 12px;
             margin: 20px 0 0;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(15, 23, 42, 0.6);
             transform: translateZ(40px);
             transition: all 0.3s;
         }
@@ -924,14 +872,6 @@
                     <span class="pill">Free to attend</span>
                 </div>
 
-                <div class="gradient-lines" aria-hidden="true">
-                    <div class="gradient-line gradient-line-1"></div>
-                    <div class="gradient-line gradient-line-2"></div>
-                    <div class="gradient-line gradient-line-3"></div>
-                    <div class="gradient-line gradient-line-4"></div>
-                    <div class="radial-mask"></div>
-                </div>
-
                 <div class="hero-buttons">
                     <a href="#register" class="hero-button primary">Register Now</a>
                     <a href="#contact" class="hero-button">Join Discord</a>
@@ -1081,21 +1021,21 @@
                     <div class="card-content">
                         <h3>Learn</h3>
                         <p>Sharpen your skills with hands-on workshops and mentor feedback tailored to your goals.</p>
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2560&auto=format&fit=crop" class="card-image" alt="Developers collaborating on code">
+                        <img src="assets/images/learn-build.svg" class="card-image" alt="Illustration of hands-on building and learning">
                     </div>
                 </div>
                 <div class="card" data-card="2">
                     <div class="card-content">
                         <h3>Prizes</h3>
                         <p>Win gear, recognition, and opportunities that take your project further.</p>
-                        <img src="Trophy.png" class="card-image" alt="Trophy prize">
+                        <img src="assets/images/prizes.svg" class="card-image" alt="Illustration of a trophy and prizes">
                     </div>
                 </div>
                 <div class="card" data-card="3">
                     <div class="card-content">
                         <h3>No cost to attend</h3>
                         <p>Food, mentors, and a full hackathon experience at zero cost.</p>
-                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2560&auto=format&fit=crop" class="card-image" alt="Pizza slices">
+                        <img src="assets/images/community.svg" class="card-image" alt="Illustration of a welcoming hackathon community">
                     </div>
                 </div>
             </div>
@@ -1117,14 +1057,14 @@
                     <div class="card-content">
                         <h3>AI Workshop</h3>
                         <p>Go from idea to model with the tools that power modern AI products.</p>
-                        <img src="Workshop1.png" class="card-image" alt="AI workshop">
+                        <img src="assets/images/workshop-ai.svg" class="card-image" alt="Illustration of an AI workshop">
                     </div>
                 </div>
                 <div class="card" data-card="5">
                     <div class="card-content">
                         <h3>Web Workshop</h3>
                         <p>Learn to craft sleek frontends and ship a production-ready site fast.</p>
-                        <img src="Workshop2.png" class="card-image" alt="Web development workshop">
+                        <img src="assets/images/workshop-web.svg" class="card-image" alt="Illustration of a web development workshop">
                     </div>
                 </div>
             </div>
@@ -1333,43 +1273,43 @@
                 id: 1,
                 name: "Kaushik",
                 designation: "Operations",
-                image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=600&q=80"
+                image: "assets/avatars/kaushik.svg"
             },
             {
                 id: 2,
                 name: "Saketh",
                 designation: "Lead Organizer",
-                image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=600&q=80"
+                image: "assets/avatars/saketh.svg"
             },
             {
                 id: 3,
                 name: "Samarth",
                 designation: "Logistics",
-                image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80"
+                image: "assets/avatars/samarth.svg"
             },
             {
                 id: 4,
                 name: "Braedyn",
                 designation: "Sponsorships",
-                image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80"
+                image: "assets/avatars/braedyn.svg"
             },
             {
                 id: 5,
                 name: "Ruhaan",
                 designation: "Community",
-                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80"
+                image: "assets/avatars/ruhaan.svg"
             },
             {
                 id: 6,
                 name: "Kyle",
                 designation: "Mentorship",
-                image: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&w=600&q=80"
+                image: "assets/avatars/kyle.svg"
             },
             {
                 id: 7,
                 name: "Mukhil",
                 designation: "Design",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+                image: "assets/avatars/mukhil.svg"
             }
         ];
 
