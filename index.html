@@ -72,8 +72,8 @@
             --card: rgba(255, 255, 255, 0.05);
             --card-border: rgba(255, 255, 255, 0.1);
             --shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-            --bg-gradient-1: rgba(139, 92, 246, 0.18);
-            --bg-gradient-2: rgba(56, 189, 248, 0.12);
+            --bg-gradient-1: rgba(0, 0, 0, 0.65);
+            --bg-gradient-2: rgba(18, 18, 24, 0.35);
         }
 
         html[data-theme="light"] {
@@ -1115,10 +1115,8 @@
             <ul class="nav-links">
                 <li><a href="#home" data-i18n="nav.home">Home</a></li>
                 <li><a href="#about" data-i18n="nav.about">About</a></li>
-                <li><a href="build-lab.html" data-i18n="nav.buildlab">Build Lab</a></li>
                 <li><a href="#agenda" data-i18n="nav.agenda">Agenda</a></li>
                 <li><a href="#countdown" data-i18n="nav.countdown">Countdown</a></li>
-                <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
                 <li><a href="#why-join" data-i18n="nav.why">Why Join</a></li>
                 <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
                 <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
@@ -1154,7 +1152,6 @@
 
                 <div class="hero-buttons">
                     <a href="#register" class="hero-button primary" data-i18n="hero.register">Register Now</a>
-                    <a href="build-lab.html" class="hero-button" data-i18n="hero.buildlab">Explore Build Lab</a>
                     <a href="#contact" class="hero-button" data-i18n="hero.community">Join Community</a>
                     <a href="mailto:hello@dublinhackathon.com" class="hero-button" data-i18n="hero.contact">Contact</a>
                 </div>
@@ -1326,62 +1323,10 @@
             </div>
         </section>
 
-        <section class="experience-section" id="experience">
-            <h2 class="section-title" data-i18n="experience.title">Experience the Build Lab</h2>
-            <p class="section-subtitle" data-i18n="experience.subtitle">A utilitarian, high-output environment with the polish of a flagship event.</p>
-            <div class="experience-grid">
-                <div class="experience-card">
-                    <span class="badge" data-i18n="experience.badge.live">Live Studio</span>
-                    <h3 data-i18n="experience.live.title">Live Coding Studio</h3>
-                    <p data-i18n="experience.live.body">Follow guided prompts, API showcases, and mentor check-ins with a structured build flow.</p>
-                    <div class="code-block" aria-label="Sample build prompt">
-                        <div class="code-line"><span>//</span> Build prompt: Smart campus app</div>
-                        <div class="code-line"><span>const</span> stack = ["Figma", "React", "Supabase"];</div>
-                        <div class="code-line"><span>const</span> goal = "Ship by demo time";</div>
-                        <div class="code-line"><span>deploy</span>(project).then(share);</div>
-                    </div>
-                </div>
-                <div class="experience-card">
-                    <span class="badge" data-i18n="experience.badge.stats">Real-time</span>
-                    <h3 data-i18n="experience.stats.title">Live Event Stats</h3>
-                    <p data-i18n="experience.stats.body">Track mentorship, workshops, and project submissions as they happen.</p>
-                    <div class="stats-grid" data-countup>
-                        <div class="stat">
-                            <div class="stat-value" data-count="120">0</div>
-                            <div class="stat-label" data-i18n="experience.stats.teams">Teams</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value" data-count="30">0</div>
-                            <div class="stat-label" data-i18n="experience.stats.mentors">Mentors</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value" data-count="6">0</div>
-                            <div class="stat-label" data-i18n="experience.stats.workshops">Workshops</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-value" data-count="14">0</div>
-                            <div class="stat-label" data-i18n="experience.stats.mentorship">Mentor hours</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="experience-card">
-                    <span class="badge" data-i18n="experience.badge.tools">Tooling</span>
-                    <h3 data-i18n="experience.tools.title">Product-ready Support</h3>
-                    <p data-i18n="experience.tools.body">Everything you need to ship and share fast, without leaving the venue.</p>
-                    <ul class="checklist">
-                        <li data-i18n="experience.tools.list1">Team matching and live help desk</li>
-                        <li data-i18n="experience.tools.list2">Design kits, APIs, and dataset access</li>
-                        <li data-i18n="experience.tools.list3">Demo stage, judge feedback, and press-ready assets</li>
-                        <li data-i18n="experience.tools.list4">Cloud deployment support on site</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
         <section class="sponsors-section" id="sponsors">
             <h2 class="section-title" data-i18n="sponsors.title">Sponsors</h2>
             <p class="section-subtitle" data-i18n="sponsors.subtitle">Trusted by organizations that invest in student innovation.</p>
-            <p class="section-subtitle" data-i18n="sponsors.body">Sponsor Build Lab to showcase your tools, meet emerging talent, and help students ship meaningful work.</p>
+            <p class="section-subtitle" data-i18n="sponsors.body">Partner with DublinHacks to showcase your tools, meet emerging talent, and support student builders.</p>
             <div class="infinite-scroll-container">
                 <div class="scroll-track" id="scrollTrack"></div>
             </div>
@@ -1471,10 +1416,8 @@
             en: {
                 "nav.home": "Home",
                 "nav.about": "About",
-                "nav.buildlab": "Build Lab",
                 "nav.agenda": "Agenda",
                 "nav.countdown": "Countdown",
-                "nav.experience": "Experience",
                 "nav.why": "Why Join",
                 "nav.faq": "FAQ",
                 "nav.contact": "Contact",
@@ -1486,7 +1429,6 @@
                 "hero.location": "In-person · Dublin, Bay Area, California",
                 "hero.free": "Free to attend",
                 "hero.register": "Register Now",
-                "hero.buildlab": "Explore Build Lab",
                 "hero.community": "Join Community",
                 "hero.contact": "Contact",
                 "about.mission.title": "Mission",
@@ -1532,28 +1474,9 @@
                 "why.cards.prizes.body": "Win gear, recognition, and opportunities that take your project further.",
                 "why.cards.free.title": "No cost to attend",
                 "why.cards.free.body": "Food, mentors, and a full hackathon experience at zero cost.",
-                "experience.title": "Experience the Build Lab",
-                "experience.subtitle": "A utilitarian, high-output environment with the polish of a flagship event.",
-                "experience.badge.live": "Live Studio",
-                "experience.live.title": "Live Coding Studio",
-                "experience.live.body": "Follow guided prompts, API showcases, and mentor check-ins with a structured build flow.",
-                "experience.badge.stats": "Real-time",
-                "experience.stats.title": "Live Event Stats",
-                "experience.stats.body": "Track mentorship, workshops, and project submissions as they happen.",
-                "experience.stats.teams": "Teams",
-                "experience.stats.mentors": "Mentors",
-                "experience.stats.workshops": "Workshops",
-                "experience.stats.mentorship": "Mentor hours",
-                "experience.badge.tools": "Tooling",
-                "experience.tools.title": "Product-ready Support",
-                "experience.tools.body": "Everything you need to ship and share fast, without leaving the venue.",
-                "experience.tools.list1": "Team matching and live help desk",
-                "experience.tools.list2": "Design kits, APIs, and dataset access",
-                "experience.tools.list3": "Demo stage, judge feedback, and press-ready assets",
-                "experience.tools.list4": "Cloud deployment support on site",
                 "sponsors.title": "Sponsors",
                 "sponsors.subtitle": "Trusted by organizations that invest in student innovation.",
-                "sponsors.body": "Sponsor Build Lab to showcase your tools, meet emerging talent, and help students ship meaningful work.",
+                "sponsors.body": "Partner with DublinHacks to showcase your tools, meet emerging talent, and support student builders.",
                 "workshops.title": "Workshops",
                 "workshops.subtitle": "Build momentum fast with guided sessions led by experts.",
                 "workshops.ai.title": "AI Workshop",
@@ -1585,10 +1508,8 @@
             es: {
                 "nav.home": "Inicio",
                 "nav.about": "Acerca de",
-                "nav.buildlab": "Build Lab",
                 "nav.agenda": "Agenda",
                 "nav.countdown": "Cuenta atrás",
-                "nav.experience": "Experiencia",
                 "nav.why": "Por qué unirse",
                 "nav.faq": "Preguntas",
                 "nav.contact": "Contacto",
@@ -1600,7 +1521,6 @@
                 "hero.location": "Presencial · Dublin, Área de la Bahía, California",
                 "hero.free": "Entrada gratuita",
                 "hero.register": "Regístrate ahora",
-                "hero.buildlab": "Explorar Build Lab",
                 "hero.community": "Únete a la comunidad",
                 "hero.contact": "Contacto",
                 "about.mission.title": "Misión",
@@ -1646,28 +1566,9 @@
                 "why.cards.prizes.body": "Gana equipo, reconocimiento y oportunidades para impulsar tu proyecto.",
                 "why.cards.free.title": "Sin costo",
                 "why.cards.free.body": "Comida, mentores y una experiencia completa sin costo.",
-                "experience.title": "Vive el Build Lab",
-                "experience.subtitle": "Un entorno utilitario y de alto rendimiento con el pulido de un evento principal.",
-                "experience.badge.live": "Estudio en vivo",
-                "experience.live.title": "Estudio de código en vivo",
-                "experience.live.body": "Sigue prompts guiados, demos de APIs y check-ins con mentores.",
-                "experience.badge.stats": "En tiempo real",
-                "experience.stats.title": "Estadísticas en vivo",
-                "experience.stats.body": "Mide mentorías, talleres y entregas al instante.",
-                "experience.stats.teams": "Equipos",
-                "experience.stats.mentors": "Mentores",
-                "experience.stats.workshops": "Talleres",
-                "experience.stats.mentorship": "Horas de mentoría",
-                "experience.badge.tools": "Herramientas",
-                "experience.tools.title": "Soporte listo para producto",
-                "experience.tools.body": "Todo lo necesario para lanzar y compartir rápido, sin salir del evento.",
-                "experience.tools.list1": "Formación de equipos y mesa de ayuda",
-                "experience.tools.list2": "Kits de diseño, APIs y acceso a datasets",
-                "experience.tools.list3": "Escenario de demos, feedback y recursos de prensa",
-                "experience.tools.list4": "Soporte de despliegue en la nube",
                 "sponsors.title": "Patrocinadores",
                 "sponsors.subtitle": "Organizaciones que invierten en la innovación estudiantil.",
-                "sponsors.body": "Patrocina Build Lab para mostrar tus herramientas, conocer talento emergente y ayudar a los estudiantes a crear proyectos con impacto.",
+                "sponsors.body": "Colabora con DublinHacks para mostrar tus herramientas, conocer talento emergente y apoyar a estudiantes.",
                 "workshops.title": "Talleres",
                 "workshops.subtitle": "Gana impulso con sesiones guiadas por expertos.",
                 "workshops.ai.title": "Taller de IA",
@@ -1699,10 +1600,8 @@
             fr: {
                 "nav.home": "Accueil",
                 "nav.about": "À propos",
-                "nav.buildlab": "Build Lab",
                 "nav.agenda": "Programme",
                 "nav.countdown": "Compte à rebours",
-                "nav.experience": "Expérience",
                 "nav.why": "Pourquoi participer",
                 "nav.faq": "FAQ",
                 "nav.contact": "Contact",
@@ -1714,7 +1613,6 @@
                 "hero.location": "En présentiel · Dublin, Bay Area, Californie",
                 "hero.free": "Participation gratuite",
                 "hero.register": "S'inscrire",
-                "hero.buildlab": "Explorer le Build Lab",
                 "hero.community": "Rejoindre la communauté",
                 "hero.contact": "Contact",
                 "about.mission.title": "Mission",
@@ -1760,28 +1658,9 @@
                 "why.cards.prizes.body": "Gagnez du matériel, de la reconnaissance et des opportunités.",
                 "why.cards.free.title": "Gratuit",
                 "why.cards.free.body": "Repas, mentors et expérience complète sans frais.",
-                "experience.title": "Vivez le Build Lab",
-                "experience.subtitle": "Un environnement efficace et professionnel pour construire vite.",
-                "experience.badge.live": "Studio live",
-                "experience.live.title": "Studio de code en direct",
-                "experience.live.body": "Prompts guidés, démos d'API et check-ins avec les mentors.",
-                "experience.badge.stats": "En temps réel",
-                "experience.stats.title": "Statistiques en direct",
-                "experience.stats.body": "Suivez le mentorat, les ateliers et les dépôts en direct.",
-                "experience.stats.teams": "Équipes",
-                "experience.stats.mentors": "Mentors",
-                "experience.stats.workshops": "Ateliers",
-                "experience.stats.mentorship": "Heures de mentorat",
-                "experience.badge.tools": "Outils",
-                "experience.tools.title": "Support prêt pour produire",
-                "experience.tools.body": "Tout pour livrer vite, sans quitter le lieu.",
-                "experience.tools.list1": "Formation d'équipe et help desk",
-                "experience.tools.list2": "Kits de design, APIs et datasets",
-                "experience.tools.list3": "Scène de démo, feedback et assets presse",
-                "experience.tools.list4": "Support de déploiement cloud sur place",
                 "sponsors.title": "Sponsors",
                 "sponsors.subtitle": "Des organisations qui investissent dans l'innovation étudiante.",
-                "sponsors.body": "Parrainez Build Lab pour présenter vos outils, rencontrer des talents émergents et aider les étudiants à livrer des projets utiles.",
+                "sponsors.body": "Partenaires de DublinHacks : présentez vos outils, rencontrez des talents émergents et soutenez les étudiants.",
                 "workshops.title": "Ateliers",
                 "workshops.subtitle": "Des sessions guidées par des experts.",
                 "workshops.ai.title": "Atelier IA",
