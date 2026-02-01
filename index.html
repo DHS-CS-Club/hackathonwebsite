@@ -60,36 +60,39 @@
         }
     </script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
         :root {
             color-scheme: dark;
-            --bg: #020202;
-            --bg-secondary: #0b0b10;
+            --bg: #06070b;
+            --bg-secondary: #0f111a;
             --text: #f8fafc;
-            --muted: rgba(248, 250, 252, 0.6);
-            --accent: #8b5cf6;
-            --accent-rgb: 139, 92, 246;
-            --accent-soft: rgba(139, 92, 246, 0.2);
-            --card: rgba(255, 255, 255, 0.05);
-            --card-border: rgba(255, 255, 255, 0.1);
-            --shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-            --bg-gradient-1: rgba(0, 0, 0, 0.65);
-            --bg-gradient-2: rgba(18, 18, 24, 0.35);
+            --muted: rgba(248, 250, 252, 0.65);
+            --accent: #7c5cff;
+            --accent-rgb: 124, 92, 255;
+            --accent-soft: rgba(124, 92, 255, 0.18);
+            --card: rgba(15, 17, 26, 0.8);
+            --card-border: rgba(148, 163, 184, 0.18);
+            --shadow: 0 24px 45px rgba(2, 6, 23, 0.45);
+            --bg-gradient-1: rgba(124, 92, 255, 0.2);
+            --bg-gradient-2: rgba(56, 189, 248, 0.15);
+            --radius: 20px;
         }
 
         html[data-theme="light"] {
             color-scheme: light;
-            --bg: #f8fafc;
+            --bg: #f6f7fb;
             --bg-secondary: #ffffff;
             --text: #0f172a;
-            --muted: rgba(15, 23, 42, 0.6);
+            --muted: rgba(15, 23, 42, 0.65);
             --accent: #5b21b6;
             --accent-rgb: 91, 33, 182;
-            --accent-soft: rgba(var(--accent-rgb), 0.16);
+            --accent-soft: rgba(var(--accent-rgb), 0.12);
             --card: rgba(255, 255, 255, 0.95);
-            --card-border: rgba(15, 23, 42, 0.12);
-            --shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
-            --bg-gradient-1: rgba(var(--accent-rgb), 0.2);
-            --bg-gradient-2: rgba(14, 116, 144, 0.16);
+            --card-border: rgba(148, 163, 184, 0.35);
+            --shadow: 0 24px 45px rgba(15, 23, 42, 0.12);
+            --bg-gradient-1: rgba(var(--accent-rgb), 0.12);
+            --bg-gradient-2: rgba(14, 116, 144, 0.1);
         }
 
         * {
@@ -99,9 +102,9 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
             background: radial-gradient(circle at top, var(--bg-gradient-1), transparent 55%),
-                radial-gradient(circle at 20% 20%, var(--bg-gradient-2), transparent 45%),
+                radial-gradient(circle at 20% 10%, var(--bg-gradient-2), transparent 50%),
                 var(--bg);
             color: var(--text);
             overflow-x: hidden;
@@ -145,15 +148,15 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 18px 50px;
+            padding: 16px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 24px;
             z-index: 1000;
-            background: rgba(2, 2, 2, 0.9);
+            background: rgba(6, 7, 11, 0.9);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.12);
             animation: slideDown 0.8s ease;
             flex-wrap: wrap;
         }
@@ -171,7 +174,7 @@
         .logo {
             font-size: 24px;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.4px;
             color: var(--text);
             text-decoration: none;
         }
@@ -196,6 +199,8 @@
             text-decoration: none;
             font-size: 15px;
             position: relative;
+            font-weight: 500;
+            opacity: 0.8;
             transition: all 0.3s;
         }
 
@@ -267,70 +272,41 @@
         }
 
         main {
-            padding-top: 80px;
+            padding-top: 90px;
         }
 
         .hero {
             position: relative;
-            height: 100vh;
+            min-height: 92vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 20px;
+            padding: 120px 20px 80px;
             overflow: hidden;
-        }
-
-        .sparkles-container {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-        }
-
-        .sparkle {
-            position: absolute;
-            background: #fff;
-            border-radius: 50%;
-            animation: sparkle-float linear infinite;
-            opacity: 0;
-        }
-
-        @keyframes sparkle-float {
-            0% {
-                opacity: 0;
-                transform: translateY(0) scale(0);
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-100vh) scale(1);
-            }
         }
 
         .hero-content {
             position: relative;
             z-index: 20;
-            max-width: 900px;
+            max-width: 880px;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 10vw, 8rem);
+            font-size: clamp(3rem, 9vw, 6.5rem);
             font-weight: 700;
             margin-bottom: 20px;
             animation: fadeInUp 1s ease 0.3s both;
-            letter-spacing: -2px;
-            text-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            letter-spacing: -1.5px;
+            text-shadow: 0 10px 30px rgba(2, 6, 23, 0.5);
         }
 
         .hero p {
             font-size: clamp(1.1rem, 2.5vw, 1.5rem);
             color: var(--muted);
+            max-width: 640px;
+            margin: 0 auto;
         }
 
         .hero-buttons {
@@ -343,10 +319,10 @@
         }
 
         .hero-button {
-            padding: 14px 32px;
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
+            padding: 12px 28px;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            border-radius: 999px;
             color: var(--text);
             text-decoration: none;
             font-size: 15px;
@@ -356,7 +332,7 @@
         }
 
         .hero-button.primary {
-            background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.9), rgba(56, 189, 248, 0.7));
+            background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.95), rgba(56, 189, 248, 0.85));
             border: none;
         }
 
@@ -390,6 +366,7 @@
             font-size: 12px;
             letter-spacing: 1px;
             text-transform: uppercase;
+            border: 1px solid rgba(var(--accent-rgb), 0.3);
         }
 
         @keyframes fadeInUp {
@@ -429,7 +406,7 @@
 
         .info-card {
             padding: 28px;
-            border-radius: 20px;
+            border-radius: var(--radius);
             background: var(--card);
             border: 1px solid var(--card-border);
             box-shadow: var(--shadow);
@@ -446,7 +423,6 @@
 
         .agenda-section {
             padding: 100px 50px;
-            min-height: 100vh;
         }
 
         .agenda-container {
@@ -483,14 +459,13 @@
             padding: 20px 30px;
             background: var(--card);
             border: 1px solid var(--card-border);
-            border-radius: 12px;
+            border-radius: 16px;
             transition: all 0.3s ease;
         }
 
         .agenda-card:hover {
             background: rgba(var(--accent-rgb), 0.08);
             border-color: rgba(var(--accent-rgb), 0.3);
-            transform: translateX(5px);
         }
 
         .agenda-time {
@@ -519,77 +494,33 @@
             font-style: italic;
         }
 
-        .macbook-section {
-            position: relative;
-            min-height: 200vh;
+        .countdown-section {
             padding: 100px 20px;
         }
 
-        .macbook-sticky {
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            perspective: 1000px;
-        }
-
-        .macbook-container {
-            width: 100%;
+        .countdown-container {
             max-width: 1100px;
-            transition: all 0.3s ease-out;
+            margin: 0 auto;
         }
 
-        .macbook {
-            position: relative;
-            width: 100%;
-            padding-top: 62.5%;
-            transform-style: preserve-3d;
+        .countdown-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 28px;
+            padding: 48px;
+            box-shadow: var(--shadow);
+            display: grid;
+            gap: 28px;
         }
 
-        .macbook-screen {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            height: 85%;
-            background: var(--bg-secondary);
-            border-radius: 12px 12px 0 0;
-            border: 12px solid #2a2a2a;
-            border-bottom: none;
-            overflow: hidden;
-            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        html[data-theme="light"] .macbook-screen {
-            border-color: rgba(15, 23, 42, 0.25);
-            box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.18);
-        }
-
-        .macbook-screen::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent);
-            pointer-events: none;
-        }
-
-        .screen-content {
-            width: 100%;
-            height: 100%;
-            background: var(--bg);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
+        .countdown-header {
+            display: grid;
+            gap: 14px;
+            text-align: center;
         }
 
         .countdown-title {
             font-size: clamp(1.5rem, 4vw, 2.6rem);
-            margin-bottom: 30px;
             color: var(--text);
             text-align: center;
         }
@@ -624,27 +555,9 @@
             margin-top: 10px;
         }
 
-        .macbook-base {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            height: 8%;
-            background: linear-gradient(to bottom, #3a3a3a, #2a2a2a);
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .macbook-notch {
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20%;
-            height: 8px;
-            background: #2a2a2a;
-            border-radius: 0 0 8px 8px;
+        .countdown-footer {
+            display: flex;
+            justify-content: center;
         }
 
         .cards-section {
@@ -767,19 +680,12 @@
         .card {
             background: var(--card);
             backdrop-filter: blur(10px);
-            border-radius: 20px;
+            border-radius: var(--radius);
             padding: 36px;
             transition: all 0.3s;
             border: 1px solid var(--card-border);
-            animation: fadeInUp 1s ease both;
-            transform-style: preserve-3d;
-            perspective: 1000px;
             position: relative;
         }
-
-        .card:nth-child(1) { animation-delay: 0.1s; }
-        .card:nth-child(2) { animation-delay: 0.2s; }
-        .card:nth-child(3) { animation-delay: 0.3s; }
 
         .card:hover {
             box-shadow: var(--shadow);
@@ -787,16 +693,10 @@
             border-color: rgba(var(--accent-rgb), 0.3);
         }
 
-        .card-content {
-            transform-style: preserve-3d;
-            transition: transform 0.1s;
-        }
-
         .card h3 {
             font-size: 24px;
             margin-bottom: 12px;
             color: var(--text);
-            transform: translateZ(30px);
         }
 
         .card p {
@@ -804,18 +704,16 @@
             opacity: 0.9;
             line-height: 1.6;
             color: var(--text);
-            transform: translateZ(20px);
         }
 
         .card-image {
             width: 100%;
             height: 220px;
             object-fit: cover;
-            border-radius: 12px;
+            border-radius: 14px;
             margin: 20px 0 0;
             border: 1px solid rgba(255, 255, 255, 0.12);
             background: rgba(15, 23, 42, 0.6);
-            transform: translateZ(40px);
             transition: all 0.3s;
         }
 
@@ -833,39 +731,16 @@
             margin-bottom: 60px;
         }
 
-        .infinite-scroll-container {
-            position: relative;
-            width: 100%;
-            height: 22rem;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            overflow: hidden;
-            margin-bottom: 60px;
-        }
-
-        .scroll-track {
-            display: flex;
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
-            animation: scroll-left 40s linear infinite;
-            will-change: transform;
-        }
-
-        .scroll-track:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes scroll-left {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
+            max-width: 1100px;
+            margin: 0 auto 60px;
         }
 
         .sponsor-card {
-            min-width: 320px;
+            min-width: 0;
             height: 180px;
             background: var(--card);
             backdrop-filter: blur(10px);
@@ -910,7 +785,7 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 40px;
-            border-radius: 24px;
+            border-radius: 28px;
             background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.2), rgba(56, 189, 248, 0.15));
             border: 1px solid rgba(var(--accent-rgb), 0.4);
             box-shadow: var(--shadow);
@@ -1092,10 +967,6 @@
                 text-align: left;
             }
 
-            .infinite-scroll-container {
-                height: 28rem;
-            }
-
             .team-section {
                 padding: 30px 20px 80px;
             }
@@ -1138,8 +1009,6 @@
 
     <main id="main">
         <section class="hero" id="home">
-            <div class="sparkles-container" id="sparkles"></div>
-
             <div class="hero-content">
                 <h1>DublinHacks 2026</h1>
                 <p data-i18n="hero.tagline">Build real-world projects in Dublin, learn from mentors, and ship your boldest ideas in one high-energy day.</p>
@@ -1260,36 +1129,34 @@
             </div>
         </section>
 
-        <section class="macbook-section" id="countdown">
-            <div class="macbook-sticky">
-                <div class="macbook-container" id="macbookContainer">
-                    <div class="macbook">
-                        <div class="macbook-screen">
-                            <div class="screen-content">
-                                <h2 class="countdown-title" data-i18n="countdown.title">Days left before DublinHacks 2026</h2>
-                                <div class="countdown" id="countdown" aria-live="polite">
-                                    <div class="countdown-item">
-                                        <div class="countdown-value" id="days">00</div>
-                                        <div class="countdown-label" data-i18n="countdown.days">Days</div>
-                                    </div>
-                                    <div class="countdown-item">
-                                        <div class="countdown-value" id="hours">00</div>
-                                        <div class="countdown-label" data-i18n="countdown.hours">Hours</div>
-                                    </div>
-                                    <div class="countdown-item">
-                                        <div class="countdown-value" id="minutes">00</div>
-                                        <div class="countdown-label" data-i18n="countdown.minutes">Minutes</div>
-                                    </div>
-                                    <div class="countdown-item">
-                                        <div class="countdown-value" id="seconds">00</div>
-                                        <div class="countdown-label" data-i18n="countdown.seconds">Seconds</div>
-                                    </div>
-                                </div>
-                            </div>
+        <section class="countdown-section" id="countdown">
+            <div class="countdown-container">
+                <div class="countdown-card">
+                    <div class="countdown-header">
+                        <span class="badge" data-i18n="countdown.badge">Event Countdown</span>
+                        <h2 class="countdown-title" data-i18n="countdown.title">Days left before DublinHacks 2026</h2>
+                        <p class="section-subtitle" data-i18n="countdown.subtitle">Mark your calendar and start building your team.</p>
+                    </div>
+                    <div class="countdown" id="countdown" aria-live="polite">
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="days">00</div>
+                            <div class="countdown-label" data-i18n="countdown.days">Days</div>
                         </div>
-                        <div class="macbook-base">
-                            <div class="macbook-notch"></div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="hours">00</div>
+                            <div class="countdown-label" data-i18n="countdown.hours">Hours</div>
                         </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="minutes">00</div>
+                            <div class="countdown-label" data-i18n="countdown.minutes">Minutes</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div class="countdown-value" id="seconds">00</div>
+                            <div class="countdown-label" data-i18n="countdown.seconds">Seconds</div>
+                        </div>
+                    </div>
+                    <div class="countdown-footer">
+                        <span class="pill" data-i18n="countdown.footer">Doors open at 9:00 AM · Dublin, CA</span>
                     </div>
                 </div>
             </div>
@@ -1327,9 +1194,7 @@
             <h2 class="section-title" data-i18n="sponsors.title">Sponsors</h2>
             <p class="section-subtitle" data-i18n="sponsors.subtitle">Trusted by organizations that invest in student innovation.</p>
             <p class="section-subtitle" data-i18n="sponsors.body">Partner with DublinHacks to showcase your tools, meet emerging talent, and support student builders.</p>
-            <div class="infinite-scroll-container">
-                <div class="scroll-track" id="scrollTrack"></div>
-            </div>
+            <div class="sponsors-grid" id="sponsorsGrid"></div>
         </section>
 
         <section class="cards-section">
@@ -1462,10 +1327,13 @@
                 "agenda.items.awards.title": "Awards Ceremony",
                 "agenda.items.awards.body": "Winners announced and prizes awarded.",
                 "countdown.title": "Days left before DublinHacks 2026",
+                "countdown.badge": "Event Countdown",
                 "countdown.days": "Days",
                 "countdown.hours": "Hours",
                 "countdown.minutes": "Minutes",
                 "countdown.seconds": "Seconds",
+                "countdown.subtitle": "Mark your calendar and start building your team.",
+                "countdown.footer": "Doors open at 9:00 AM · Dublin, CA",
                 "why.title": "Why Join",
                 "why.subtitle": "A full-day experience built for learning, collaboration, and showcasing your ideas.",
                 "why.cards.learn.title": "Learn",
@@ -1554,10 +1422,13 @@
                 "agenda.items.awards.title": "Ceremonia de premios",
                 "agenda.items.awards.body": "Anuncio de ganadores y entrega de premios.",
                 "countdown.title": "Días restantes para DublinHacks 2026",
+                "countdown.badge": "Cuenta regresiva",
                 "countdown.days": "Días",
                 "countdown.hours": "Horas",
                 "countdown.minutes": "Minutos",
                 "countdown.seconds": "Segundos",
+                "countdown.subtitle": "Reserva la fecha y empieza a formar tu equipo.",
+                "countdown.footer": "Puertas abiertas a las 9:00 AM · Dublin, CA",
                 "why.title": "Por qué unirse",
                 "why.subtitle": "Una jornada completa pensada para aprender, colaborar y mostrar tus ideas.",
                 "why.cards.learn.title": "Aprender",
@@ -1646,10 +1517,13 @@
                 "agenda.items.awards.title": "Cérémonie des prix",
                 "agenda.items.awards.body": "Annonce des gagnants et remise des prix.",
                 "countdown.title": "Jours avant DublinHacks 2026",
+                "countdown.badge": "Compte à rebours",
                 "countdown.days": "Jours",
                 "countdown.hours": "Heures",
                 "countdown.minutes": "Minutes",
                 "countdown.seconds": "Secondes",
+                "countdown.subtitle": "Réservez la date et commencez à former votre équipe.",
+                "countdown.footer": "Ouverture des portes à 9h00 · Dublin, CA",
                 "why.title": "Pourquoi participer",
                 "why.subtitle": "Une journée complète pour apprendre, collaborer et présenter vos idées.",
                 "why.cards.learn.title": "Apprendre",
@@ -1754,51 +1628,6 @@
             applyTheme(nextTheme);
         });
 
-        const sparklesContainer = document.getElementById('sparkles');
-        const sparkleCount = 120;
-
-        function createSparkle() {
-            const sparkle = document.createElement('div');
-            sparkle.className = 'sparkle';
-
-            const size = Math.random() * 3 + 1;
-            sparkle.style.width = `${size}px`;
-            sparkle.style.height = `${size}px`;
-
-            sparkle.style.left = `${Math.random() * 100}%`;
-            sparkle.style.top = `${Math.random() * 100}%`;
-
-            const duration = Math.random() * 10 + 8;
-            sparkle.style.animationDuration = `${duration}s`;
-            sparkle.style.animationDelay = `${Math.random() * 5}s`;
-
-            sparklesContainer.appendChild(sparkle);
-        }
-
-        for (let i = 0; i < sparkleCount; i += 1) {
-            createSparkle();
-        }
-
-        const macbookContainer = document.getElementById('macbookContainer');
-
-        window.addEventListener('scroll', () => {
-            const section = document.querySelector('.macbook-section');
-            const rect = section.getBoundingClientRect();
-            const scrollProgress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
-
-            const scale = 0.6 + (scrollProgress * 0.4);
-            const rotateX = (1 - scrollProgress) * 18;
-            const translateY = (1 - scrollProgress) * 80;
-
-            macbookContainer.style.transform = `
-                scale(${scale})
-                rotateX(${rotateX}deg)
-                translateY(${translateY}px)
-            `;
-
-            macbookContainer.style.opacity = 0.4 + (scrollProgress * 0.6);
-        });
-
         function updateCountdown() {
             const targetDate = new Date('March 15, 2026 00:00:00').getTime();
             const now = new Date().getTime();
@@ -1832,38 +1661,6 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
-            });
-        });
-
-        const cards = document.querySelectorAll('.card');
-
-        cards.forEach(card => {
-            const cardContent = card.querySelector('.card-content');
-
-            if (!cardContent) {
-                return;
-            }
-
-            card.addEventListener('mousemove', (event) => {
-                const rect = card.getBoundingClientRect();
-                const x = event.clientX - rect.left;
-                const y = event.clientY - rect.top;
-
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-
-                const rotateX = (y - centerY) / 12;
-                const rotateY = (centerX - x) / 12;
-
-                cardContent.style.transform = `
-                    rotateX(${rotateX}deg)
-                    rotateY(${rotateY}deg)
-                    scale3d(1.03, 1.03, 1.03)
-                `;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                cardContent.style.transform = 'rotateX(0) rotateY(0) scale3d(1, 1, 1)';
             });
         });
 
@@ -1918,12 +1715,10 @@
         }
 
         function initializeSponsors() {
-            const scrollTrack = document.getElementById('scrollTrack');
-            for (let i = 0; i < 2; i += 1) {
-                sponsors.forEach(sponsor => {
-                    scrollTrack.appendChild(createSponsorCard(sponsor));
-                });
-            }
+            const sponsorsGrid = document.getElementById('sponsorsGrid');
+            sponsors.forEach(sponsor => {
+                sponsorsGrid.appendChild(createSponsorCard(sponsor));
+            });
         }
 
         initializeSponsors();
