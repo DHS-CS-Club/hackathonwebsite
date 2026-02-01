@@ -7,7 +7,7 @@
     <meta name="keywords" content="Dublin hacks, DublinHacks, Dublin hackathon, student hackathon Dublin, Bay Area hackathon, California hackathon, coding competition Dublin, tech event Dublin, youth hackathon, workshops Dublin, mentors Dublin">
     <meta name="author" content="DublinHacks">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#05070d">
+    <meta name="theme-color" content="#020202">
     <title>DublinHacks 2026 | Dublin Student Hackathon</title>
     <link rel="canonical" href="https://dublinhackathon.com/">
     <meta property="og:title" content="DublinHacks 2026 | Dublin Student Hackathon">
@@ -62,17 +62,18 @@
     <style>
         :root {
             color-scheme: dark;
-            --bg: #05070d;
-            --bg-secondary: #0a0f1d;
+            --bg: #020202;
+            --bg-secondary: #0b0b10;
             --text: #f8fafc;
             --muted: rgba(248, 250, 252, 0.6);
-            --accent: #7c3aed;
-            --accent-soft: rgba(124, 58, 237, 0.2);
-            --card: rgba(255, 255, 255, 0.06);
-            --card-border: rgba(255, 255, 255, 0.12);
-            --shadow: 0 20px 40px rgba(10, 12, 20, 0.4);
-            --bg-gradient-1: rgba(124, 58, 237, 0.15);
-            --bg-gradient-2: rgba(56, 189, 248, 0.1);
+            --accent: #8b5cf6;
+            --accent-rgb: 139, 92, 246;
+            --accent-soft: rgba(139, 92, 246, 0.2);
+            --card: rgba(255, 255, 255, 0.05);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+            --bg-gradient-1: rgba(139, 92, 246, 0.18);
+            --bg-gradient-2: rgba(56, 189, 248, 0.12);
         }
 
         html[data-theme="light"] {
@@ -82,11 +83,12 @@
             --text: #0f172a;
             --muted: rgba(15, 23, 42, 0.6);
             --accent: #5b21b6;
-            --accent-soft: rgba(124, 58, 237, 0.16);
+            --accent-rgb: 91, 33, 182;
+            --accent-soft: rgba(var(--accent-rgb), 0.16);
             --card: rgba(255, 255, 255, 0.95);
             --card-border: rgba(15, 23, 42, 0.12);
             --shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
-            --bg-gradient-1: rgba(124, 58, 237, 0.2);
+            --bg-gradient-1: rgba(var(--accent-rgb), 0.2);
             --bg-gradient-2: rgba(14, 116, 144, 0.16);
         }
 
@@ -149,7 +151,7 @@
             align-items: center;
             gap: 24px;
             z-index: 1000;
-            background: rgba(5, 7, 13, 0.85);
+            background: rgba(2, 2, 2, 0.9);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             animation: slideDown 0.8s ease;
@@ -244,14 +246,14 @@
 
         .control-button:hover,
         .control-select:hover {
-            border-color: rgba(124, 58, 237, 0.5);
-            box-shadow: 0 10px 20px rgba(124, 58, 237, 0.15);
+            border-color: rgba(var(--accent-rgb), 0.5);
+            box-shadow: 0 10px 20px rgba(var(--accent-rgb), 0.15);
             transform: translateY(-1px);
         }
 
         .control-button[aria-pressed="true"] {
             background: var(--accent-soft);
-            border-color: rgba(124, 58, 237, 0.6);
+            border-color: rgba(var(--accent-rgb), 0.6);
         }
 
         .nav-links a:focus-visible,
@@ -354,19 +356,19 @@
         }
 
         .hero-button.primary {
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.9), rgba(56, 189, 248, 0.7));
+            background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.9), rgba(56, 189, 248, 0.7));
             border: none;
         }
 
         .hero-button:hover {
-            background: rgba(124, 58, 237, 0.2);
-            border-color: rgba(124, 58, 237, 0.8);
+            background: rgba(var(--accent-rgb), 0.2);
+            border-color: rgba(var(--accent-rgb), 0.8);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+            box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.3);
         }
 
         .hero-button.primary:hover {
-            background: linear-gradient(135deg, rgba(124, 58, 237, 1), rgba(56, 189, 248, 0.9));
+            background: linear-gradient(135deg, rgba(var(--accent-rgb), 1), rgba(56, 189, 248, 0.9));
         }
 
         .hero-meta {
@@ -486,8 +488,8 @@
         }
 
         .agenda-card:hover {
-            background: rgba(124, 58, 237, 0.08);
-            border-color: rgba(124, 58, 237, 0.3);
+            background: rgba(var(--accent-rgb), 0.08);
+            border-color: rgba(var(--accent-rgb), 0.3);
             transform: translateX(5px);
         }
 
@@ -724,8 +726,8 @@
         .stat {
             padding: 16px;
             border-radius: 14px;
-            background: rgba(124, 58, 237, 0.08);
-            border: 1px solid rgba(124, 58, 237, 0.2);
+            background: rgba(var(--accent-rgb), 0.08);
+            border: 1px solid rgba(var(--accent-rgb), 0.2);
             text-align: center;
         }
 
@@ -781,8 +783,8 @@
 
         .card:hover {
             box-shadow: var(--shadow);
-            background: rgba(124, 58, 237, 0.08);
-            border-color: rgba(124, 58, 237, 0.3);
+            background: rgba(var(--accent-rgb), 0.08);
+            border-color: rgba(var(--accent-rgb), 0.3);
         }
 
         .card-content {
@@ -879,8 +881,8 @@
         }
 
         .sponsor-card:hover {
-            background: rgba(124, 58, 237, 0.08);
-            border-color: rgba(124, 58, 237, 0.3);
+            background: rgba(var(--accent-rgb), 0.08);
+            border-color: rgba(var(--accent-rgb), 0.3);
             transform: translateY(-5px);
             box-shadow: var(--shadow);
         }
@@ -909,8 +911,8 @@
             margin: 0 auto;
             padding: 40px;
             border-radius: 24px;
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(56, 189, 248, 0.15));
-            border: 1px solid rgba(124, 58, 237, 0.4);
+            background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.2), rgba(56, 189, 248, 0.15));
+            border: 1px solid rgba(var(--accent-rgb), 0.4);
             box-shadow: var(--shadow);
         }
 
@@ -1113,6 +1115,7 @@
             <ul class="nav-links">
                 <li><a href="#home" data-i18n="nav.home">Home</a></li>
                 <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="build-lab.html" data-i18n="nav.buildlab">Build Lab</a></li>
                 <li><a href="#agenda" data-i18n="nav.agenda">Agenda</a></li>
                 <li><a href="#countdown" data-i18n="nav.countdown">Countdown</a></li>
                 <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
@@ -1151,6 +1154,7 @@
 
                 <div class="hero-buttons">
                     <a href="#register" class="hero-button primary" data-i18n="hero.register">Register Now</a>
+                    <a href="build-lab.html" class="hero-button" data-i18n="hero.buildlab">Explore Build Lab</a>
                     <a href="#contact" class="hero-button" data-i18n="hero.community">Join Community</a>
                     <a href="mailto:hello@dublinhackathon.com" class="hero-button" data-i18n="hero.contact">Contact</a>
                 </div>
@@ -1169,6 +1173,10 @@
             <div class="info-card">
                 <h3 data-i18n="about.build.title">What You'll Build</h3>
                 <p data-i18n="about.build.body">Apps, hardware prototypes, AI tools, and more. Pitch your idea, get feedback, and demo to judges at the end.</p>
+            </div>
+            <div class="info-card">
+                <h3 data-i18n="about.community.title">Community & Nonprofit</h3>
+                <p data-i18n="about.community.body">DublinHacks is a Hack Club suborganization, and Hack Club is a 501(c)(3) nonprofit, so donations are tax-deductible.</p>
             </div>
         </section>
 
@@ -1372,7 +1380,8 @@
 
         <section class="sponsors-section" id="sponsors">
             <h2 class="section-title" data-i18n="sponsors.title">Sponsors</h2>
-            <p class="section-subtitle" data-i18n="sponsors.subtitle">Trusted by organizations that believe in student innovation.</p>
+            <p class="section-subtitle" data-i18n="sponsors.subtitle">Trusted by organizations that invest in student innovation.</p>
+            <p class="section-subtitle" data-i18n="sponsors.body">Sponsor Build Lab to showcase your tools, meet emerging talent, and help students ship meaningful work.</p>
             <div class="infinite-scroll-container">
                 <div class="scroll-track" id="scrollTrack"></div>
             </div>
@@ -1462,6 +1471,7 @@
             en: {
                 "nav.home": "Home",
                 "nav.about": "About",
+                "nav.buildlab": "Build Lab",
                 "nav.agenda": "Agenda",
                 "nav.countdown": "Countdown",
                 "nav.experience": "Experience",
@@ -1476,6 +1486,7 @@
                 "hero.location": "In-person · Dublin, Bay Area, California",
                 "hero.free": "Free to attend",
                 "hero.register": "Register Now",
+                "hero.buildlab": "Explore Build Lab",
                 "hero.community": "Join Community",
                 "hero.contact": "Contact",
                 "about.mission.title": "Mission",
@@ -1484,6 +1495,8 @@
                 "about.who.body": "Beginners and experienced builders alike. We provide workshops, mentors, and teammates so you can focus on creating.",
                 "about.build.title": "What You'll Build",
                 "about.build.body": "Apps, hardware prototypes, AI tools, and more. Pitch your idea, get feedback, and demo to judges at the end.",
+                "about.community.title": "Community & Nonprofit",
+                "about.community.body": "DublinHacks is a Hack Club suborganization, and Hack Club is a 501(c)(3) nonprofit, so donations are tax-deductible.",
                 "agenda.title": "Event Schedule",
                 "agenda.subtitle": "March 15, 2026 · All times in Dublin, CA (PT)",
                 "agenda.items.registration.title": "Registration & Check-in",
@@ -1539,7 +1552,8 @@
                 "experience.tools.list3": "Demo stage, judge feedback, and press-ready assets",
                 "experience.tools.list4": "Cloud deployment support on site",
                 "sponsors.title": "Sponsors",
-                "sponsors.subtitle": "Trusted by organizations that believe in student innovation.",
+                "sponsors.subtitle": "Trusted by organizations that invest in student innovation.",
+                "sponsors.body": "Sponsor Build Lab to showcase your tools, meet emerging talent, and help students ship meaningful work.",
                 "workshops.title": "Workshops",
                 "workshops.subtitle": "Build momentum fast with guided sessions led by experts.",
                 "workshops.ai.title": "AI Workshop",
@@ -1571,6 +1585,7 @@
             es: {
                 "nav.home": "Inicio",
                 "nav.about": "Acerca de",
+                "nav.buildlab": "Build Lab",
                 "nav.agenda": "Agenda",
                 "nav.countdown": "Cuenta atrás",
                 "nav.experience": "Experiencia",
@@ -1585,6 +1600,7 @@
                 "hero.location": "Presencial · Dublin, Área de la Bahía, California",
                 "hero.free": "Entrada gratuita",
                 "hero.register": "Regístrate ahora",
+                "hero.buildlab": "Explorar Build Lab",
                 "hero.community": "Únete a la comunidad",
                 "hero.contact": "Contacto",
                 "about.mission.title": "Misión",
@@ -1593,6 +1609,8 @@
                 "about.who.body": "Principiantes y personas con experiencia. Ofrecemos talleres, mentores y equipos para que te enfoques en crear.",
                 "about.build.title": "Lo que construirás",
                 "about.build.body": "Apps, prototipos de hardware, herramientas de IA y más. Presenta tu idea, recibe feedback y haz demo al final.",
+                "about.community.title": "Comunidad y organización sin fines de lucro",
+                "about.community.body": "DublinHacks es una suborganización de Hack Club, y Hack Club es una organización 501(c)(3), por lo que las donaciones son deducibles de impuestos.",
                 "agenda.title": "Agenda del evento",
                 "agenda.subtitle": "15 de marzo de 2026 · Horario de Dublin, CA (PT)",
                 "agenda.items.registration.title": "Registro y bienvenida",
@@ -1648,7 +1666,8 @@
                 "experience.tools.list3": "Escenario de demos, feedback y recursos de prensa",
                 "experience.tools.list4": "Soporte de despliegue en la nube",
                 "sponsors.title": "Patrocinadores",
-                "sponsors.subtitle": "Organizaciones que creen en la innovación estudiantil.",
+                "sponsors.subtitle": "Organizaciones que invierten en la innovación estudiantil.",
+                "sponsors.body": "Patrocina Build Lab para mostrar tus herramientas, conocer talento emergente y ayudar a los estudiantes a crear proyectos con impacto.",
                 "workshops.title": "Talleres",
                 "workshops.subtitle": "Gana impulso con sesiones guiadas por expertos.",
                 "workshops.ai.title": "Taller de IA",
@@ -1680,6 +1699,7 @@
             fr: {
                 "nav.home": "Accueil",
                 "nav.about": "À propos",
+                "nav.buildlab": "Build Lab",
                 "nav.agenda": "Programme",
                 "nav.countdown": "Compte à rebours",
                 "nav.experience": "Expérience",
@@ -1694,6 +1714,7 @@
                 "hero.location": "En présentiel · Dublin, Bay Area, Californie",
                 "hero.free": "Participation gratuite",
                 "hero.register": "S'inscrire",
+                "hero.buildlab": "Explorer le Build Lab",
                 "hero.community": "Rejoindre la communauté",
                 "hero.contact": "Contact",
                 "about.mission.title": "Mission",
@@ -1702,6 +1723,8 @@
                 "about.who.body": "Débutants et confirmés. Ateliers, mentors et équipes pour vous concentrer sur la création.",
                 "about.build.title": "Ce que vous allez créer",
                 "about.build.body": "Applications, prototypes hardware, outils IA et plus. Présentez votre idée et démo devant le jury.",
+                "about.community.title": "Communauté et association",
+                "about.community.body": "DublinHacks est une sous-organisation de Hack Club, et Hack Club est une association 501(c)(3), donc les dons sont déductibles des impôts.",
                 "agenda.title": "Programme",
                 "agenda.subtitle": "15 mars 2026 · Heures de Dublin, CA (PT)",
                 "agenda.items.registration.title": "Inscription & accueil",
@@ -1757,7 +1780,8 @@
                 "experience.tools.list3": "Scène de démo, feedback et assets presse",
                 "experience.tools.list4": "Support de déploiement cloud sur place",
                 "sponsors.title": "Sponsors",
-                "sponsors.subtitle": "Des organisations qui soutiennent l'innovation étudiante.",
+                "sponsors.subtitle": "Des organisations qui investissent dans l'innovation étudiante.",
+                "sponsors.body": "Parrainez Build Lab pour présenter vos outils, rencontrer des talents émergents et aider les étudiants à livrer des projets utiles.",
                 "workshops.title": "Ateliers",
                 "workshops.subtitle": "Des sessions guidées par des experts.",
                 "workshops.ai.title": "Atelier IA",
@@ -1820,7 +1844,7 @@
             document.documentElement.setAttribute('data-theme', theme);
             themeToggle.setAttribute('aria-pressed', theme === 'dark');
             if (themeMeta) {
-                themeMeta.setAttribute('content', theme === 'dark' ? '#05070d' : '#f8fafc');
+                themeMeta.setAttribute('content', theme === 'dark' ? '#020202' : '#f8fafc');
             }
             updateThemeText(theme);
             localStorage.setItem('theme', theme);
