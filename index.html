@@ -687,6 +687,17 @@
             position: relative;
         }
 
+        #why-join .card {
+            perspective: 1000px;
+        }
+
+        #why-join .card-content {
+            transform: rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+            transform-style: preserve-3d;
+            transition: transform 0.2s ease;
+            will-change: transform;
+        }
+
         .card:hover {
             box-shadow: var(--shadow);
             background: rgba(var(--accent-rgb), 0.08);
@@ -1789,6 +1800,41 @@
         }
 
         initializeTeam();
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const tiltCards = document.querySelectorAll('#why-join .card');
+
+        tiltCards.forEach(card => {
+            const cardContent = card.querySelector('.card-content');
+            if (!cardContent) {
+                return;
+            }
+
+            const resetTransform = () => {
+                cardContent.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            };
+
+            resetTransform();
+
+            if (prefersReducedMotion.matches) {
+                return;
+            }
+
+            card.addEventListener('mousemove', event => {
+                const rect = card.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+                const midX = rect.width / 2;
+                const midY = rect.height / 2;
+                const rotateX = ((midY - y) / midY) * 8;
+                const rotateY = ((x - midX) / midX) * 8;
+
+                cardContent.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
+            });
+
+            card.addEventListener('mouseleave', resetTransform);
+            card.addEventListener('blur', resetTransform);
+        });
     </script>
 </body>
 </html>
